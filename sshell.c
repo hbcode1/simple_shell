@@ -1,5 +1,16 @@
 #include "sshell.h"
 
+/**
+ * main - Entry point to a simple shell program
+ * 
+ * @ac: number of args passed to it
+ * @av: array of args passed to it
+ * @env: program environment
+ * 
+ * Return:
+ *	- 0 Success(Alwayse)
+ */
+
 int main(int ac, char *av[], char **env)
 {
 	char *buff = NULL;
@@ -13,7 +24,7 @@ int main(int ac, char *av[], char **env)
 	(void)ac;
 	(void)av;
 	signal(SIGINT, handle_ctrl_c); /* task 1 */
-	/* task 1 */ while (1) 
+	/* task 1 */ while (1)
 	{
 		if (isatty(STDIN_FILENO))
 			prmpt();/* task 1 */
