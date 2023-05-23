@@ -1,5 +1,14 @@
 #include "sshell.h"
 
+/**
+ * get_environment_variable_value - return value of env variable
+ *
+ * @variable: variable name
+ * @index: index after = character
+ *
+ * Return: variable value or NULL
+*/
+
 char *get_environment_variable_value(char *variable, int index)
 {
 	if (variable)
@@ -13,6 +22,16 @@ char *get_environment_variable_value(char *variable, int index)
 	}
 	return (NULL);
 }
+
+
+/**
+ * get_environment_variable - return an environment variable
+ *
+ * @variableName: env variable name
+ * Return:
+ *  - value of variable string
+ *  - NULL: if not exist.
+ */
 
 char *get_environment_variable(char *variableName)
 {
