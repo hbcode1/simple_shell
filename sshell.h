@@ -42,7 +42,7 @@ void free_all(char *buff, char **grid);
 /* handle path */
 
 char *get_environment_variable_value(char *variable, int index);
-char* get_environment_variable(char* variableName);
+char *get_environment_variable(char *variableName);
 char **get_directories(char *path);
 char *search_command_in_path(char *command, char *search_path);
 int is_valid_command(char *command);
