@@ -37,12 +37,16 @@ int main(int ac, char *av[], char **env)
 		}
 		else if (pid == 0)
 		{
+			if (cmd_args && *cmd_args) /* task 3 */
+			{
+				*cmd_args = locate_command(*cmd_args);/* task 3 */
 				if (execve(cmd_args[0], cmd_args, env) == -1) /* task 2 */
 				{
 					perror(cmd_args[0]); /* task 1 */
 					free_all(buff, cmd_args);/* task 2 */
 					exit(EXIT_FAILURE);
 				}
+			}
 			free_all(buff, cmd_args); /* task 2 */
 			exit(EXIT_SUCCESS);
 		}
