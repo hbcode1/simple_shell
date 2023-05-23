@@ -20,6 +20,7 @@
 void handle_ctrl_c(int sig __attribute__((unused)));
 int prmpt(void);
 int newline(void);
+char **split_args_by_delim(char *str, char *delim, int *n);
 
 
 /* string lib */
@@ -32,4 +33,8 @@ char *_strdup(char *str);
 /* print to stderr*/
 void putserr(char *str);
 int _puterr(char c);
+
+/* free */
+void free_grid(char **grid);
+void free_all(char *buff, char **grid);
 #endif /* end define sshell.h header*/
