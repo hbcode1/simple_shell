@@ -1,4 +1,7 @@
 *.swp
-~
+*~
 hsh
-
+*.pdf
+.*
+*.bash
+/checker
