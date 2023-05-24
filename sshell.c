@@ -1,14 +1,23 @@
 #include "sshell.h"
 
+/**
+ * handle_builtins - handle built-ins functions
+ *
+ * @command: command entred by user
+ * @buff: readed line
+ * @args: arrays of args
+ * @sh: program name
+ */
+
 void handle_builtins(char *command, char *buff, char **args, char *sh)
 {
 	if (command)
 	{
 		if (_strcmp(command, "exit") == 0)
-			{
-				free(buff);
-				builtin_exit(args[1], args, sh);
-			}
+		{
+			free(buff);
+			builtin_exit(args[1], args, sh);
+		}
 		if (_strcmp(command, "env") == 0)
 			builtin_env();
 	}
@@ -21,6 +30,7 @@ void handle_builtins(char *command, char *buff, char **args, char *sh)
  * @command: command passed to shell
  * @buff: line readed by getline without newline
  * @env: program environment
+ * @sh: program name
  */
 
 void execute_command(char *command, char *buff, char **env, char *sh)
@@ -100,7 +110,8 @@ int main(int ac, char *av[], char **env)
 			exit(EXIT_SUCCESS);
 		}
 		command = strtok(buff, "\n"); /* task 1 */
-		execute_command(command, buff, env, sh); /* Call the execute_command function */
+		/* Calling execute_command function */
+		execute_command(command, buff, env, sh);
 		buff = NULL;
 	}
 	free(buff);

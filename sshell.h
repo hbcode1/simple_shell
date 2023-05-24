@@ -1,6 +1,8 @@
 #ifndef SSHELL_H
 #define SSHELL_H
 
+/* Declare the global variable environ */
+extern char **environ;
 
 /* LIBS */
 
